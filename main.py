@@ -1,8 +1,3 @@
-from turtle import back
-from pip import main
-import openpyxl
-from matplotlib.pyplot import get, text
-from numpy import append
 from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
 from selenium import webdriver
@@ -102,7 +97,7 @@ for row in range (2,329904):
             sFeetTemp = element.text().encode('utf-8')
             squareFeet = int("".join(filter(str.isdigit, sFeetTemp)))
             appndList.append(squareFeet)
-        except:
+        finally:
             appndList.append("N/A")
 
     #if these elements can't be fetched and updated properly then we will go back and start the loop for the next search term       
