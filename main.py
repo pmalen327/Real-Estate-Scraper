@@ -97,11 +97,11 @@ for row in range (2,329904):
             sFeetTemp = element.text().encode('utf-8')
             squareFeet = int("".join(filter(str.isdigit, sFeetTemp)))
             appndList.append(squareFeet)
-        finally:
+        except:
             appndList.append("N/A")
 
     #if these elements can't be fetched and updated properly then we will go back and start the loop for the next search term       
-    except:
+    finally:
         driver.back()
     
     wsWrite.append(appndList)
